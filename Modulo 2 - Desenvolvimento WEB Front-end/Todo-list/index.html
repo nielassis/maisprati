@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Lista de compras</title>
+  </head>
+  <body>
+    <main>
+      <section id="todo-form-container">
+        <h1 class="todo-title">Lista de Compras</h1>
+
+        <div class="todo-add-container">
+          <form id="todo-form">
+            <div class="form-inputs">
+              <input
+                type="text"
+                class="input-name"
+                placeholder="Nome do item"
+              />
+            </div>
+            <div class="form-buttons">
+              <button class="todo-add-btn" type="submit">Adicionar</button>
+              <button class="todo-clear-btn" type="button">Limpar lista</button>
+            </div>
+          </form>
+        </div>
+      </section>
+
+      <section id="todo-items">
+        <ul id="items-list"></ul>
+      </section>
+    </main>
+
+    <script src="app.js" defer></script>
+  </body>
+</html>
