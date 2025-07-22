@@ -61,6 +61,6 @@ Exemplo:
 
 ## 💼 Projetos
 
-| Nome do Projeto | Visite o Projeto | Repositório no GitHub | Data     |
-| --------------- | ---------------- | --------------------- | -------- |
-| Em breve        | [Clique aqui](#) | [Repositório](#)      | --/--/-- |
+| Nome do Projeto  | Visite o Projeto                                       | Repositório no GitHub                                                         | Data       |
+| ---------------- | ------------------------------------------------------ | ----------------------------------------------------------------------------- | ---------- |
+| Lista de compras | [Clique aqui](https://maisprati-todo-list.netlify.app) | [Repositório](/Modulo%202%20-%20Desenvolvimento%20WEB%20Front-end/Todo-list/) | 03/07/2025 |
