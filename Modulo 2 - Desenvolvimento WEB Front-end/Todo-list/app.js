@@ -64,7 +64,7 @@ function renderList() {
     toggleStatusBtn.classList.add("icon-btn");
 
     const purchaseIcon = document.createElement("i");
-    purchaseIcon.classList.add("fa-solid", "fa-check");
+    purchaseIcon.classList.add("bi", "bi-check-lg");
 
     toggleStatusBtn.appendChild(purchaseIcon);
 
@@ -82,7 +82,7 @@ function renderList() {
     removeItemBtn.classList.add("remove-icon-btn");
 
     const removeIcon = document.createElement("i");
-    removeIcon.classList.add("fa-solid", "fa-trash");
+    removeIcon.classList.add("bi", "bi-trash");
 
     removeItemBtn.appendChild(removeIcon);
     removeItemBtn.style.marginLeft = "10px";
