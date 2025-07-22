@@ -4,12 +4,33 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
+
     <title>Lista de compras</title>
   </head>
   <body>
     <main>
       <section id="todo-form-container">
         <h1 class="todo-title">Lista de Compras</h1>
+
+        <div class="todo-controllers">
+          <span class="total-count">Items: </span>
+          <span class="purchased-count">Comprados: </span>
+          <span class="pending-count">Pendentes: </span>
+
+          <div class="todo-order-filter">
+            <select name="filter" id="filter">
+              <option value="all">Todos</option>
+              <option value="purchased">Comprados</option>
+              <option value="pending">Pendentes</option>
+            </select>
+
+            <select name="order" id="order">
+              <option value="default">Padrão</option>
+              <option value="alphabetical">Alfabeticamente</option>
+              <option value="status">Status</option>
+            </select>
+          </div>
+        </div>
 
         <div class="todo-add-container">
           <form id="todo-form">
@@ -18,6 +39,7 @@
                 type="text"
                 class="input-name"
                 placeholder="Nome do item"
+                id="todo-input-form"
               />
             </div>
             <div class="form-buttons">
@@ -34,5 +56,9 @@
     </main>
 
     <script src="app.js" defer></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/js/all.min.js"
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>
