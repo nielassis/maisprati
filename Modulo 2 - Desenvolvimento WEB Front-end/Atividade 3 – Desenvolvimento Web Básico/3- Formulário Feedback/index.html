@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <title>Pesquisa de Satisfação</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="intro"></div>
+      <div class="form">
+        <div class="title">
+          <h1>Queremos ouvir <span class="highlight">você</span>!</h1>
+          <p>Queremos saber como podemos melhorar</p>
+        </div>
+        <form action="" method="post" id="survey-form">
+          <h2>Dados Pessoais</h2>
+          <div class="input-group">
+            <label for="name-input"> <i class="fas fa-user"></i> Nome </label>
+            <input
+              type="text"
+              id="name-input"
+              placeholder="Digite seu nome..."
+              required
+            />
+          </div>
+
+          <div class="input-group">
+            <label for="email-input">
+              <i class="fas fa-envelope"></i> E-mail
+            </label>
+            <input
+              type="email"
+              id="email-input"
+              placeholder="Digite seu e-mail..."
+              required
+            />
+          </div>
+
+          <div class="input-group">
+            <label for="phone-input">
+              <i class="fas fa-phone"></i> Telefone
+            </label>
+            <input
+              type="tel"
+              id="phone-input"
+              placeholder="(XX) XXXXX-XXXX"
+              required
+            />
+          </div>
+
+          <div class="input-group">
+            <label for="address-input">
+              <i class="fas fa-home"></i> Endereço
+            </label>
+            <input
+              type="text"
+              id="address-input"
+              placeholder="Digite seu endereço..."
+              required
+            />
+          </div>
+
+          <h2>Pesquisa</h2>
+
+          <div class="question">
+            <p>1. Como você avalia nosso atendimento?</p>
+            <label>
+              <input type="radio" name="atendimento" value="Ótimo" required />
+              Ótimo
+            </label>
+            <label>
+              <input type="radio" name="atendimento" value="Bom" />
+              Bom
+            </label>
+            <label>
+              <input type="radio" name="atendimento" value="Ruim" />
+              Ruim
+            </label>
+          </div>
+
+          <div class="question">
+            <p>2. Você recomendaria nossos serviços?</p>
+            <label>
+              <input type="radio" name="recomendacao" value="Sim" required />
+              Sim
+            </label>
+            <label>
+              <input type="radio" name="recomendacao" value="Não" />
+              Não
+            </label>
+          </div>
+
+          <div class="input-group">
+            <label for="satisfaction">
+              <i class="fas fa-smile"></i> Nível de satisfação
+            </label>
+            <select id="satisfaction" required>
+              <option value="" disabled selected>Selecione...</option>
+              <option value="Muito satisfeito">Muito satisfeito</option>
+              <option value="Satisfeito">Satisfeito</option>
+              <option value="Insatisfeito">Insatisfeito</option>
+            </select>
+          </div>
+
+          <div class="checkbox-group">
+            <input type="checkbox" id="share-consent" required />
+            <label for="share-consent"
+              >Autorizo compartilhar minhas respostas com terceiros</label
+            >
+          </div>
+
+          <button type="submit">
+            <i class="fas fa-paper-plane"></i> Enviar
+          </button>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

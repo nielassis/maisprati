@@ -1,0 +1,187 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background-color: #121212;
+  color: #fff;
+  overflow: hidden;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 100vh;
+}
+
+.intro {
+  background-image: url(./assets/image.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+  width: 50%;
+  filter: grayscale(100%);
+  transition: filter 0.3s ease;
+}
+
+.intro:hover {
+  filter: grayscale(0);
+}
+
+.form {
+  height: 100%;
+  width: 50%;
+  background: linear-gradient(to bottom right, #1e1e1e, #292929);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  flex-direction: column;
+}
+
+.form .title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 20%;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 20px;
+  flex-direction: column;
+}
+
+.form .title .highlight {
+  color: #00ff7f;
+}
+
+#survey-form {
+  display: flex;
+  flex-direction: column;
+  height: 500px;
+  width: 100%;
+  max-width: 450px;
+  gap: 20px;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  overflow: auto;
+}
+
+h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  border-bottom: 2px solid #00ff7f;
+  padding-bottom: 5px;
+}
+
+.input-group {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.input-group label {
+  font-size: 1.1rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #fff;
+}
+
+.input-group input,
+.input-group select {
+  width: 100%;
+  padding: 15px 20px;
+  border: none;
+  border-radius: 30px;
+  background: #333;
+  color: #fff;
+  transition: all 0.3s ease;
+  font-size: 1rem;
+}
+
+.input-group input:focus,
+.input-group select:focus {
+  background: #444;
+  box-shadow: 0 0 15px rgba(0, 255, 127, 0.3);
+}
+
+.question {
+  font-size: 1.1rem;
+  color: #fff;
+}
+
+.question label {
+  display: block;
+  margin-top: 5px;
+  font-size: 1rem;
+}
+
+.question input {
+  margin-right: 10px;
+}
+
+.checkbox-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.checkbox-group input {
+  width: 20px;
+  height: 20px;
+}
+
+button {
+  width: 100%;
+  padding: 15px;
+  border: none;
+  border-radius: 30px;
+  background: #00ff7f;
+  color: #000;
+  font-size: 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  background: #00cc66;
+  transform: scale(1.05);
+}
+
+#survey-form {
+  overflow: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #00ff7f #292929;
+}
+
+#survey-form::-webkit-scrollbar {
+  width: 8px;
+}
+
+#survey-form::-webkit-scrollbar-track {
+  background: #292929;
+  border-radius: 10px;
+}
+
+#survey-form::-webkit-scrollbar-thumb {
+  background: #00ff7f;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+
+#survey-form::-webkit-scrollbar-thumb:hover {
+  background: #00cc66;
+}
+
+#survey-form::-webkit-scrollbar-button {
+  display: none;
+}
