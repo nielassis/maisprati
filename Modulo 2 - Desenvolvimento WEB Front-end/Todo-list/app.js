@@ -9,11 +9,13 @@ const purchasedCount = document.querySelector(".purchased-count");
 const pendingCount = document.querySelector(".pending-count");
 
 let items = [];
+let currentId = 0;
 
 window.addEventListener("DOMContentLoaded", () => {
   const data = localStorage.getItem("purchaseList");
   if (data) {
     items = JSON.parse(data);
+    currentId = items.reduce((maxId, item) => Math.max(maxId, item.id), 0) + 1;
     renderList();
   }
 });
@@ -50,7 +52,7 @@ function renderList() {
     items.filter((i) => !i.purchased).length
   }`;
 
-  rendering.forEach((item, index) => {
+  rendering.forEach((item, id) => {
     const li = document.createElement("li");
     li.textContent = item.text;
 
@@ -88,12 +90,13 @@ function renderList() {
     removeItemBtn.style.marginLeft = "10px";
     removeItemBtn.addEventListener("click", (e) => {
       e.stopPropagation();
-      removeItem(index);
+      removeItem(item.id);
     });
 
     li.addEventListener("click", () => {
-      togglePurchased(index);
+      togglePurchased(item.id);
     });
+
     buttonsDiv.appendChild(removeItemBtn);
     buttonsDiv.appendChild(toggleStatusBtn);
     li.appendChild(buttonsDiv);
@@ -105,22 +108,28 @@ form.addEventListener("submit", (e) => {
   e.preventDefault();
   const newItem = input.value.trim();
   if (newItem === "") return;
-  items.push({ text: newItem, purchased: false });
+  items.push({ id: currentId++, text: newItem, purchased: false });
   saveData();
   renderList();
   input.value = "";
 });
 
-function removeItem(index) {
-  items.splice(index, 1);
-  saveData();
-  renderList();
+function removeItem(id) {
+  const index = items.findIndex((item) => item.id === id);
+  if (index !== -1) {
+    items.splice(index, 1);
+    saveData();
+    renderList();
+  }
 }
 
-function togglePurchased(index) {
-  items[index].purchased = !items[index].purchased;
-  saveData();
-  renderList();
+function togglePurchased(id) {
+  const index = items.findIndex((item) => item.id === id);
+  if (index !== -1) {
+    items[index].purchased = !items[index].purchased;
+    saveData();
+    renderList();
+  }
 }
 
 clearBtn.addEventListener("click", () => {
