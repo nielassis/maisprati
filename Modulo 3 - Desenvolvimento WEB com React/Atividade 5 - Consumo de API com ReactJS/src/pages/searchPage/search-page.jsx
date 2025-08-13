@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { searchMovies } from "../../provider/api";
 
 import "./search-page.css";
-import MovieCard from "./components/movieCard/movie-card";
+import MovieCard from "../../components/common/movieCard/movie-card";
 import Pagination from "./components/pagination/pagination";
 import Loading from "../../components/common/loading/loading";
 
