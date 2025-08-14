@@ -16,7 +16,7 @@ export default function App() {
         <main className="app-container">
           <Routes>
             <Route path="/" element={<SearchPage />} />
-            <Route path="/detalhes/:id" element={<DetailsPage />} />
+            <Route path="/details/:imdbId" element={<DetailsPage />} />
             <Route path="/favoritos" element={<FavoritesPage />} />
           </Routes>
         </main>

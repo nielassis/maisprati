@@ -1,9 +1,20 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import "./movie-card.css";
 
 export default function MovieCard({ movie }) {
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    navigate(`/details/${movie.imdbID}`);
+  };
+
   return (
-    <div className="movie-card">
+    <div
+      className="movie-card"
+      onClick={handleClick}
+      style={{ cursor: "pointer" }}
+    >
       <img
         src={
           movie.Poster !== "N/A"

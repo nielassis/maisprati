@@ -1,10 +1,11 @@
 import React, { useState } from "react";
-import { searchMovies } from "../../provider/api";
+import { searchMovies } from "../../providers/omdbApi";
 
 import "./search-page.css";
 import MovieCard from "../../components/common/movieCard/movie-card";
 import Pagination from "./components/pagination/pagination";
 import Loading from "../../components/common/loading/loading";
+import { CiSearch } from "react-icons/ci";
 
 export default function SearchPage() {
   const [query, setQuery] = useState("");
@@ -50,17 +51,19 @@ export default function SearchPage() {
 
   return (
     <div className="container">
-      <h1 className="page-title">Buscar Filmes</h1>
+      <h1 className="page-title">Search Movies</h1>
 
       <div className="search-bar">
         <input
           type="text"
-          placeholder="Digite o nome do filme..."
+          placeholder="Search for a movie..."
           value={query}
           onChange={(e) => setQuery(e.target.value)}
           onKeyDown={(e) => e.key === "Enter" && handleSearch()}
         />
-        <button onClick={handleSearch}>Buscar</button>
+        <button onClick={handleSearch}>
+          <CiSearch />
+        </button>
       </div>
 
       {loading && <Loading />}

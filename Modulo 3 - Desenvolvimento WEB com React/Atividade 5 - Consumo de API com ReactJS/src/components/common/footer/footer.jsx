@@ -5,9 +5,7 @@ import "./footer.css";
 export default function Footer() {
   return (
     <footer className="app-footer">
-      <p>
-        © {new Date().getFullYear()} MovieSearch. Todos os direitos reservados.
-      </p>
+      <p>© {new Date().getFullYear()} MovieSearch. All rights reserved.</p>
       <div className="footer-icons">
         <a
           href="https://github.com/nielassis"

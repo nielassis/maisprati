@@ -40,3 +40,24 @@ export const searchMovies = async (query, page = 1) => {
     };
   }
 };
+
+export const getMovieById = async (imdbId) => {
+  try {
+    const response = await omdbApi.get("", {
+      params: {
+        i: imdbId,
+        plot: "full",
+      },
+    });
+
+    if (response.data.Response === "True") {
+      return response.data;
+    } else {
+      return { error: response.data.Error };
+    }
+  } catch (error) {
+    return { error: error.message };
+  }
+};
+
+export default omdbApi;

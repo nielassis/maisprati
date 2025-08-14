@@ -13,7 +13,7 @@ export default function Header() {
 
       <nav className="nav-links">
         <Link to="/favorites">
-          <FaHeart /> Favoritos
+          <FaHeart /> Favorites
         </Link>
       </nav>
     </header>

@@ -1,0 +1,171 @@
+.details-page {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.poster {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.info-container {
+  flex: 1;
+  min-width: 250px;
+}
+
+.banner {
+  width: 200px;
+  height: 300px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 10px;
+  flex-shrink: 0;
+}
+
+.movie-info .title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.movie-info .title h1 {
+  font-size: 2em;
+  margin: 0;
+}
+
+.movie-info .title button {
+  background-color: #e69d00ff;
+  display: flex;
+  gap: 5px;
+  color: white;
+  align-items: center;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-weight: bold;
+  transition: background-color 0.3s;
+  border: none;
+  cursor: pointer;
+}
+
+.movie-info .title button:hover {
+  background-color: #cc8700;
+}
+
+.movie-info .title button p {
+  margin: 0;
+}
+
+.movie-info .meta {
+  color: #666;
+  margin-bottom: 15px;
+  font-size: 0.95em;
+}
+
+.movie-info .plot {
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+.ratings {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.rating .label {
+  font-weight: bold;
+  margin-right: 5px;
+}
+
+.rating .value {
+  display: inline-block;
+  width: 40px;
+  text-align: center;
+  color: white;
+  border-radius: 4px;
+  padding: 2px 0;
+}
+
+.rating .value.good {
+  background-color: #28a745;
+}
+.rating .value.medium {
+  background-color: #ffc107;
+  color: black;
+}
+.rating .value.bad {
+  background-color: #dc3545;
+}
+
+.streaming {
+  text-align: start;
+}
+
+.streaming h3 {
+  margin-bottom: 10px;
+}
+
+.platforms {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.platform {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 12px;
+  transition: transform 0.3s, box-shadow 0.3s;
+  overflow: hidden;
+}
+
+.platform img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+
+.platform:hover {
+  transform: scale(1.1);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+}
+
+@media (max-width: 768px) {
+  .movie-info .title {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .movie-info .title h1 {
+    font-size: 1.5em;
+  }
+
+  .movie-info .title button {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .poster {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .info-container {
+    text-align: center;
+  }
+
+  .banner {
+    width: 100%;
+    height: 250px;
+  }
+}
