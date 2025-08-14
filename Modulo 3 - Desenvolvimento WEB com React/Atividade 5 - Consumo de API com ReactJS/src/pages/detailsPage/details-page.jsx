@@ -2,15 +2,17 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { getMovieById } from "../../providers/omdbApi";
 import { getStreamingAvailability } from "../../providers/streamAvailabilityApi";
-import { CiStar } from "react-icons/ci";
+import { CiStar, CiViewList, CiWarning } from "react-icons/ci";
 import Loading from "../../components/common/loading/loading";
 import "./details-page.css";
 import getRatingColor from "../../helpers/getRatingColors";
+import VideoPlayer from "./components/videoPlayer/video-player";
 
 export default function DetailsPage() {
   const { imdbId } = useParams();
   const [movie, setMovie] = useState(null);
   const [streaming, setStreaming] = useState(null);
+  const [open, setOpen] = useState(false);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -104,6 +106,26 @@ export default function DetailsPage() {
           ></div>
         </div>
         <p className="plot">{movie.Plot}</p>
+      </div>
+
+      <div className="stream">
+        <button className="watch-here" onClick={() => setOpen(!open)}>
+          <CiViewList />
+          <p>Watch Here</p>
+        </button>
+
+        {open && (
+          <div className="video-player">
+            <div className="warn">
+              <span>
+                <CiWarning style={{ color: "red" }} />
+                <h1>Some actions may trigger ads, please be careful.</h1>
+              </span>
+            </div>
+
+            <VideoPlayer imdbId={movie.imdbID} />
+          </div>
+        )}
       </div>
     </div>
   );

@@ -1,0 +1,22 @@
+.video-player {
+  width: 100%;
+  max-width: 800px;
+
+  aspect-ratio: 16 / 9;
+  border: 0;
+  border-radius: 16px;
+  margin: 0 auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 768px) {
+  .video-player {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .video-player {
+    border-radius: 8px;
+  }
+}
