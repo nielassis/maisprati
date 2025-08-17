@@ -123,7 +123,7 @@ export default function DetailsPage() {
                           rel="noopener noreferrer"
                           className="platform"
                           style={{
-                            backgroundColor: `rgba(255, 255, 255, 0.7)`,
+                            backgroundColor: "white",
                           }}
                         >
                           <img
