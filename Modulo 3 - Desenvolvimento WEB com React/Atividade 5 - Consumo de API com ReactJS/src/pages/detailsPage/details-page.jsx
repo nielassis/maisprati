@@ -7,7 +7,7 @@ import Loading from "../../components/common/loading/loading";
 import "./details-page.css";
 import getRatingColor from "../../helpers/getRatingColors";
 import VideoPlayer from "./components/videoPlayer/video-player";
-import { FavoriteMovie } from "./helpers/AddOnFavorite";
+import { FavoriteMovie } from "../../helpers/AddOnFavorite";
 
 export default function DetailsPage() {
   const { imdbId } = useParams();
@@ -20,7 +20,6 @@ export default function DetailsPage() {
     const fetchData = async () => {
       const movieData = await getMovieById(imdbId);
       setMovie(movieData);
-      console.log(movieData);
 
       const streamingData = await getStreamingAvailability(imdbId);
       setStreaming(streamingData.data?.streamingOptions);
@@ -32,7 +31,8 @@ export default function DetailsPage() {
         movieData.Poster
       );
       const favorite = await favoriteMovie.getFavorite();
-      setIsFavorite(favorite.some((item) => item.imdbId === imdbId));
+
+      setIsFavorite(favorite.some((item) => item.imdbID === imdbId));
     };
 
     fetchData();
@@ -41,22 +41,17 @@ export default function DetailsPage() {
   if (!movie) return <Loading />;
 
   const handleClick = async () => {
+    const favoriteMovie = new FavoriteMovie(
+      imdbId,
+      movie.Title,
+      movie.Year,
+      movie.Poster
+    );
+
     if (isFavorite) {
-      const favoriteMovie = new FavoriteMovie(
-        imdbId,
-        movie.Title,
-        movie.Year,
-        movie.Poster
-      );
       await favoriteMovie.removeFavorite();
       setIsFavorite(false);
     } else {
-      const favoriteMovie = new FavoriteMovie(
-        imdbId,
-        movie.Title,
-        movie.Year,
-        movie.Poster
-      );
       await favoriteMovie.addFavorite();
       setIsFavorite(true);
     }

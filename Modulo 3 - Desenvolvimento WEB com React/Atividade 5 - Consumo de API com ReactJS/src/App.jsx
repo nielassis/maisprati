@@ -17,7 +17,7 @@ export default function App() {
           <Routes>
             <Route path="/" element={<SearchPage />} />
             <Route path="/details/:imdbId" element={<DetailsPage />} />
-            <Route path="/favoritos" element={<FavoritesPage />} />
+            <Route path="/favorites" element={<FavoritesPage />} />
           </Routes>
         </main>
 
