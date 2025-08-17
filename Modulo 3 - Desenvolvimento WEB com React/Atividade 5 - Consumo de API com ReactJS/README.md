@@ -100,5 +100,4 @@ http://localhost:5173
 
 - [React Documentation](https://reactjs.org/docs/getting-started.html)
 - [Vite Documentation](https://vitejs.dev/)
-- [TailwindCSS Documentation](https://tailwindcss.com/docs)
 - [Vercel](https://vercel.com/)
