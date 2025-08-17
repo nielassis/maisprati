@@ -19,7 +19,20 @@
   color: #e5a00d;
 }
 
-.nav-links {
+.logo-link {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  text-decoration: none;
+  color: white;
+}
+
+.logo-link:hover {
+  color: #e5a00d;
+  transition: color 0.2s;
+}
+
+w .nav-links {
   display: flex;
   gap: 15px;
 }

@@ -7,8 +7,10 @@ export default function Header() {
   return (
     <header className="app-header">
       <div className="logo">
-        <FaFilm className="logo-icon" />
-        <span>MovieSearch</span>
+        <Link to="/" className="logo-link">
+          <FaFilm className="logo-icon" />
+          <span>MovieSearch</span>
+        </Link>
       </div>
 
       <nav className="nav-links">
