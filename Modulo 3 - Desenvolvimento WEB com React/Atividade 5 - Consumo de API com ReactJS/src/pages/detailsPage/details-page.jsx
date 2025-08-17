@@ -2,31 +2,65 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { getMovieById } from "../../providers/omdbApi";
 import { getStreamingAvailability } from "../../providers/streamAvailabilityApi";
-import { CiStar, CiViewList, CiWarning } from "react-icons/ci";
+import { CiStar, CiTrash, CiViewList, CiWarning } from "react-icons/ci";
 import Loading from "../../components/common/loading/loading";
 import "./details-page.css";
 import getRatingColor from "../../helpers/getRatingColors";
 import VideoPlayer from "./components/videoPlayer/video-player";
+import { FavoriteMovie } from "./helpers/AddOnFavorite";
 
 export default function DetailsPage() {
   const { imdbId } = useParams();
   const [movie, setMovie] = useState(null);
   const [streaming, setStreaming] = useState(null);
   const [open, setOpen] = useState(false);
+  const [isFavorite, setIsFavorite] = useState(false);
 
   useEffect(() => {
     const fetchData = async () => {
       const movieData = await getMovieById(imdbId);
       setMovie(movieData);
+      console.log(movieData);
 
       const streamingData = await getStreamingAvailability(imdbId);
       setStreaming(streamingData.data?.streamingOptions);
+
+      const favoriteMovie = new FavoriteMovie(
+        imdbId,
+        movieData.Title,
+        movieData.Year,
+        movieData.Poster
+      );
+      const favorite = await favoriteMovie.getFavorite();
+      setIsFavorite(favorite.some((item) => item.imdbId === imdbId));
     };
 
     fetchData();
   }, [imdbId]);
 
   if (!movie) return <Loading />;
+
+  const handleClick = async () => {
+    if (isFavorite) {
+      const favoriteMovie = new FavoriteMovie(
+        imdbId,
+        movie.Title,
+        movie.Year,
+        movie.Poster
+      );
+      await favoriteMovie.removeFavorite();
+      setIsFavorite(false);
+    } else {
+      const favoriteMovie = new FavoriteMovie(
+        imdbId,
+        movie.Title,
+        movie.Year,
+        movie.Poster
+      );
+      await favoriteMovie.addFavorite();
+      setIsFavorite(true);
+    }
+  };
 
   return (
     <div className="details-page">
@@ -35,9 +69,24 @@ export default function DetailsPage() {
           <div className="info-container">
             <div className="title">
               <h1>{movie.Title}</h1>
-              <button>
-                <CiStar />
-                <p>Favorite</p>
+              <button
+                onClick={() => handleClick()}
+                style={{
+                  backgroundColor: isFavorite ? "red" : "yellow",
+                }}
+                className="favorite-button"
+              >
+                {isFavorite ? (
+                  <>
+                    <CiTrash />
+                    <p>Remove from favorites</p>
+                  </>
+                ) : (
+                  <>
+                    <CiStar />
+                    <p>Add to favorites</p>
+                  </>
+                )}
               </button>
             </div>
             <p className="meta">
