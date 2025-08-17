@@ -61,6 +61,7 @@ Exemplo:
 
 ## 💼 Projetos
 
-| Nome do Projeto  | Visite o Projeto                                       | Repositório no GitHub                                                         | Data       |
-| ---------------- | ------------------------------------------------------ | ----------------------------------------------------------------------------- | ---------- |
-| Lista de compras | [Clique aqui](https://maisprati-todo-list.netlify.app) | [Repositório](/Modulo%202%20-%20Desenvolvimento%20WEB%20Front-end/Todo-list/) | 03/07/2025 |
+| Nome do Projeto  | Visite o Projeto                                       | Repositório no GitHub                                                                                                       | Data       |
+| ---------------- | ------------------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------- | ---------- |
+| Lista de compras | [Clique aqui](https://maisprati-todo-list.netlify.app) | [Repositório](/Modulo%202%20-%20Desenvolvimento%20WEB%20Front-end/Todo-list/)                                               | 03/07/2025 |
+| Movie Search     | [Clique aqui](https://moviesearch-mpt.vercel.app)      | [Repositório](/Modulo%203%20-%20Desenvolvimento%20WEB%20com%20React/Atividade%205%20-%20Consumo%20de%20API%20com%20ReactJS) | 17/08/2025 |
