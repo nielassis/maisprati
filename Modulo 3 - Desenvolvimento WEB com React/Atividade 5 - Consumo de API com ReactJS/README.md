@@ -27,6 +27,12 @@ Este projeto é uma aplicação ReactJS para **buscar informações de filmes e 
 
 ---
 
+## 🌐 Deploy
+
+A aplicação está disponível online em: [moviesearch-mpt.vercel.app](https://moviesearch-mpt.vercel.app)
+
+---
+
 ## ⚙️ Variáveis de Ambiente
 
 Crie um arquivo `.env` na raiz do projeto com as seguintes variáveis:
@@ -74,17 +80,11 @@ http://localhost:5173
 
 ---
 
-## 🌐 Deploy
-
-A aplicação está disponível online em: [moviesearch-mpt.vercel.app](https://moviesearch-mpt.vercel.app)
-
----
-
 ## 📚 APIs Utilizadas
 
 - [OMDb API](http://www.omdbapi.com/) – Informações de filmes e séries
-- [Streaming Availability API](https://www.streamingavailability.com/) – Plataformas de streaming
-- [Superflix API](#) – Dados adicionais de filmes e séries
+- [Streaming Availability API](https://rapidapi.com/movie-of-the-night-movie-of-the-night-default/api/streaming-availability) – Plataformas de streaming
+- [Superflix API](https://www.superflixapi.digital/doc) – Dados adicionais de filmes e séries
 
 ---
 
