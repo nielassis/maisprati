@@ -135,21 +135,21 @@
 }
 
 .default {
-  background-color: #7c3aed;
+  background-color: #4b3ec4;
   border-radius: 16px;
   color: white;
 }
 
 .default:hover {
-  color: #7c3aed;
+  color: #4b3ec4;
   background-color: white;
-  border: 1px solid #7c3aed;
+  border: 1px solid #4b3ec4;
   border-radius: 16px;
   transition: color 300ms ease-in-out;
 }
 
 .favorited {
-  color: #7c3aed;
+  color: #4b3ec4;
 }
 
 @media (min-width: 768px) {

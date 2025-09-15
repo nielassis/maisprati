@@ -18,10 +18,14 @@ export default function ProductInfo() {
     if (!id) return;
 
     setIsLoading(true);
+
     getProductById(id)
       .then((data) => setProduct(data))
       .catch((err) => console.error("Erro ao buscar produto:", err))
-      .finally(() => setIsLoading(false));
+      .finally(() => {
+        const timeout = setTimeout(() => setIsLoading(false), 1500);
+        return () => clearTimeout(timeout);
+      });
   }, [id]);
 
   if (isLoading)
