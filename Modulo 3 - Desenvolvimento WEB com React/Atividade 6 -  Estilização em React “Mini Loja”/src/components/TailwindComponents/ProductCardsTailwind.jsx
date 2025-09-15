@@ -136,8 +136,8 @@ export default function ProductCardsTailwind({ products = [] }) {
                         }`}
                         aria-label={
                           isFavorited
-                            ? `Remover ${product.title} do carrinho`
-                            : `Adicionar ${product.title} ao carrinho`
+                            ? `Remove ${product.title} of favorites`
+                            : `Add ${product.title} to favorites`
                         }
                       >
                         ♥

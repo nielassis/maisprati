@@ -104,11 +104,11 @@ export default function ProductInfo() {
             }`}
             aria-label={
               isFavorited
-                ? `Remover ${product.title} do carrinho`
-                : `Adicionar ${product.title} ao carrinho`
+                ? `Remove ${product.title} of favorites`
+                : `Add ${product.title} to favorites`
             }
           >
-            {isFavorited ? "Remover do carrinho" : "Adicionar ao carrinho"}
+            {isFavorited ? "Remove of favorites" : "Add to favorites"}
           </button>
         </div>
       </section>
