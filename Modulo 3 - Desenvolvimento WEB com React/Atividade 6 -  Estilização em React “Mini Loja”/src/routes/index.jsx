@@ -3,6 +3,7 @@ import MainLayout from "../layouts/MainLayout";
 import HomeTailwind from "../pages/TailwindPages/HomeTailwind";
 import ProductInfo from "../pages/CssModulesPages/ProductInfo";
 import Favorites from "../pages/GlobalCssPages/Favorites";
+import Checkout from "../pages/StyledComponentsPages/Checkout";
 
 export const router = createBrowserRouter([
   {
@@ -12,6 +13,7 @@ export const router = createBrowserRouter([
       { path: "/", element: <HomeTailwind /> },
       { path: "/product/:id", element: <ProductInfo /> },
       { path: "/favorites", element: <Favorites /> },
+      { path: "/checkout", element: <Checkout /> },
     ],
   },
 ]);

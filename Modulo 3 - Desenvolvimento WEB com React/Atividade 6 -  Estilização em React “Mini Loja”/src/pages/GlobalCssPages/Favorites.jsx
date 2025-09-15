@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "../../components/GlobalCssComponents/Favorites.css";
+import { Link } from "react-router-dom";
 
 export default function Favorites() {
   const [cart, setCart] = useState([]);
@@ -77,7 +78,11 @@ export default function Favorites() {
         <p>Shipping: ${totals.shipping.toFixed(2)}</p>
         <p>Tax (20%): ${totals.tax.toFixed(2)}</p>
         <h3>Order Total: ${totals.total.toFixed(2)}</h3>
-        <button className="checkout-button">Checkout</button>
+        <button className="checkout-button">
+          <Link to="/checkout" className="checkout-link">
+            Checkout
+          </Link>
+        </button>
       </div>
     </div>
   );

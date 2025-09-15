@@ -150,6 +150,10 @@
   transition: background 0.2s ease;
 }
 
+.checkout-link {
+  color: #fff;
+}
+
 .checkout-button:hover {
   background-color: #3a2bb8;
 }
