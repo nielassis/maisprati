@@ -1,0 +1,159 @@
+:root {
+  /* Paleta de cores */
+  --primary-bg: #f5f5f7;
+  --secondary-bg: #ffffff;
+  --primary-text: #333333;
+  --secondary-text: #555555;
+  --accent-color: #0077ff;
+  --danger-color: #e63946;
+  --discount-color: #29a329;
+
+  /* Espaçamentos */
+  --spacing-small: 8px;
+  --spacing-medium: 16px;
+  --spacing-large: 24px;
+
+  /* Font sizes */
+  --font-small: 14px;
+  --font-medium: 18px;
+  --font-large: 24px;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: var(--spacing-large);
+  background-color: var(--secondary-bg);
+  border-radius: 8px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  font-family: Arial, sans-serif;
+}
+
+.title {
+  font-size: var(--font-large);
+  font-weight: bold;
+  margin-bottom: var(--spacing-medium);
+  color: var(--primary-text);
+}
+
+.details {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-large);
+}
+
+.imageWrapper {
+  flex: 1;
+  background-color: var(--primary-bg);
+  border-radius: 8px;
+  padding: var(--spacing-medium);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.image:hover {
+  transform: scale(1.05);
+}
+
+.info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-medium);
+}
+
+.description {
+  font-size: var(--font-medium);
+  color: var(--secondary-text);
+}
+
+.price {
+  font-size: var(--font-large);
+  color: var(--primary-text);
+}
+
+.discountedPrice {
+  color: var(--discount-color);
+  font-weight: bold;
+}
+
+.originalPrice {
+  text-decoration: line-through;
+  color: var(--secondary-text);
+  margin-left: var(--spacing-small);
+}
+
+.rating {
+  color: var(--accent-color);
+  font-weight: bold;
+}
+
+.category {
+  font-size: var(--font-small);
+  font-style: italic;
+  color: var(--secondary-text);
+}
+
+.tags {
+  font-size: var(--font-small);
+  color: var(--secondary-text);
+}
+
+.skeletonContainer {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-small);
+}
+
+.skeletonTitle,
+.skeletonDetails {
+  background-color: #e0e0e0;
+  height: 20px;
+  border-radius: 4px;
+}
+
+.skeletonTitle {
+  width: 60%;
+}
+
+.skeletonDetails {
+  width: 80%;
+}
+
+.button {
+  padding: 0.5rem;
+  transition: color 0.2s ease-in-out;
+}
+
+.default {
+  background-color: #7c3aed;
+  border-radius: 16px;
+  color: white;
+}
+
+.default:hover {
+  color: #7c3aed;
+  background-color: white;
+  border: 1px solid #7c3aed;
+  border-radius: 16px;
+  transition: color 300ms ease-in-out;
+}
+
+.favorited {
+  color: #7c3aed;
+}
+
+@media (min-width: 768px) {
+  .details {
+    flex-direction: row;
+  }
+}
